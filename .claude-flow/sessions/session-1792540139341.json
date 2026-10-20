@@ -1,0 +1,14 @@
+{
+  "id": "session-1792540139341",
+  "startedAt": "2026-10-20T23:48:59.341Z",
+  "cwd": "C:\\pcbuild\\claude-code-starter-kit",
+  "context": {},
+  "metrics": {
+    "edits": 0,
+    "commands": 0,
+    "tasks": 0,
+    "errors": 0
+  },
+  "endedAt": "2026-10-20T23:49:10.806Z",
+  "duration": 11466
+}

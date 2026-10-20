@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Claude Code & Codex Starter Kit</title>
+<style>
+@page{size:A4;margin:0}
+:root{--ink:#22262a;--muted:#5d646b;--copper:#b4703f;--paper:#f7f6f3;--line:#e3dfd8}
+*{box-sizing:border-box}body{margin:0;font:13px/1.45 "Segoe UI",Inter,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.page{width:210mm;height:297mm;padding:16mm 16mm 12mm;display:flex;flex-direction:column;gap:5mm}
+.top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:4mm}
+h1{font-size:25px;margin:0;line-height:1.15}h1 span{color:var(--copper)}
+.tag{font-size:11px;color:var(--muted);text-align:right}
+.lead{font-size:14px;margin:0}
+h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin:0 0 2mm}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:4mm}
+.card b{display:block;font-size:13.5px;margin-bottom:1mm}.card code{font-size:11.5px}
+code{font-family:Consolas,monospace;background:#efece6;padding:0 3px;border-radius:3px}
+ol{margin:0;padding-left:5mm}ol li{margin:1.2mm 0}
+.tip{border-left:3px solid var(--copper);padding:2mm 4mm;background:#fff}
+.foot{margin-top:auto;display:flex;justify-content:space-between;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:3mm}
+</style></head><body><div class="page">
+<div class="top"><h1>Claude Code &amp; Codex<br><span>Starter Kit</span></h1><div class="tag">Guia de 1 página<br>JP Gestão · jpgestao.com</div></div>
+<p class="lead">Agente de IA para programação só é tão bom quanto as regras que recebe. Este kit dá aos dois agentes as mesmas regras, permissões seguras e três fluxos prontos, para que toda sessão comece do jeito que a sua equipe trabalha.</p>
+
+<div><h2>O que vem no kit</h2><div class="grid">
+<div class="card"><b>Um arquivo de regras para os dois</b><code>AGENTS.md</code> diz como rodar, testar e fechar uma tarefa. O Codex lê direto; <code>CLAUDE.md</code> importa com uma linha.</div>
+<div class="card"><b>Permissões seguras</b>Testes e <code>git diff</code> rodam sem perguntar. <code>push</code> e <code>commit</code> pedem confirmação. Force-push e leitura do <code>.env</code> são bloqueados.</div>
+<div class="card"><b>Proteção de segredos</b>Um hook bloqueia qualquer edição em <code>.env</code>, chaves e credenciais, e manda o agente pedir a uma pessoa.</div>
+<div class="card"><b>Três skills</b><code>/pr-review</code> acha bugs antes do PR. <code>/release-notes</code> escreve notas que o cliente entende. <code>/sop-from-notes</code> transforma anotações em POP.</div>
+</div></div>
+
+<div><h2>Instale em 10 minutos</h2><ol>
+<li>Copie <code>AGENTS.md</code>, <code>CLAUDE.md</code> e a pasta <code>.claude/</code> para a raiz do seu repositório.</li>
+<li>Preencha os 3 campos de <code>AGENTS.md</code>: o que é o projeto, como rodar, como testar.</li>
+<li>Coloque seus comandos de teste e lint na lista <code>allow</code> de <code>.claude/settings.json</code>.</li>
+<li>Abra o Claude Code no repositório uma vez e aceite "confiar nesta pasta".</li>
+<li>Digite <code>/pr-review</code>. No Codex, pergunte "quais são as regras deste repositório?" para confirmar que ele leu o <code>AGENTS.md</code>.</li>
+</ol></div>
+
+<div class="tip"><b>A regra que mais economiza tempo:</b> faça o agente fechar toda tarefa com "testes passando + resumo em 3 linhas + o que ficou de fora". Você revisa um resumo, não um paredão de código.</div>
+
+<div><h2>Crie a sua skill</h2>
+<p style="margin:0">Uma skill é uma pasta com um <code>SKILL.md</code>: um nome, uma linha dizendo quando usar e passos numerados. Comece pela tarefa que a equipe repete toda semana, escreva os passos como explicaria a alguém novo e mantenha em até 30 linhas.</p></div>
+
+<div><h2>O que muda na equipe</h2><div class="grid">
+<div class="card"><b>Antes</b>Cada pessoa pede de um jeito. O agente adivinha como testar, mexe em arquivo que ninguém pediu e alguém acha uma senha num commit.</div>
+<div class="card"><b>Depois</b>Mesmas regras em toda sessão, comando arriscado pede confirmação, segredo fica bloqueado e o trabalho repetido vira um comando.</div>
+</div></div>
+
+<div class="foot"><span>Quer o kit montado para o seu projeto, com skills do seu fluxo e um vídeo gravado para a equipe? Tudo assíncrono, sem reunião.</span><span>jpgestao.com</span></div>
+</div></body></html>
