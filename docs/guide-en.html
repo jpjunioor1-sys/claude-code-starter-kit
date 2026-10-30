@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>Claude Code & Codex Starter Kit</title>
+<style>
+@page{size:A4;margin:0}
+:root{--ink:#22262a;--muted:#5d646b;--copper:#b4703f;--paper:#f7f6f3;--line:#e3dfd8}
+*{box-sizing:border-box}body{margin:0;font:13px/1.45 "Segoe UI",Inter,Arial,sans-serif;color:var(--ink);background:var(--paper)}
+.page{width:210mm;height:297mm;padding:16mm 16mm 12mm;display:flex;flex-direction:column;gap:5mm}
+.top{display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--ink);padding-bottom:4mm}
+h1{font-size:25px;margin:0;line-height:1.15}h1 span{color:var(--copper)}
+.tag{font-size:11px;color:var(--muted);text-align:right}
+.lead{font-size:14px;margin:0}
+h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--copper);margin:0 0 2mm}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:4mm}
+.card b{display:block;font-size:13.5px;margin-bottom:1mm}.card code{font-size:11.5px}
+code{font-family:Consolas,monospace;background:#efece6;padding:0 3px;border-radius:3px}
+ol{margin:0;padding-left:5mm}ol li{margin:1.2mm 0}
+.tip{border-left:3px solid var(--copper);padding:2mm 4mm;background:#fff}
+.foot{margin-top:auto;display:flex;justify-content:space-between;font-size:11px;color:var(--muted);border-top:1px solid var(--line);padding-top:3mm}
+</style></head><body><div class="page">
+<div class="top"><h1>Claude Code &amp; Codex<br><span>Starter Kit</span></h1><div class="tag">One-page setup guide<br>JP Gestão · jpgestao.com</div></div>
+<p class="lead">AI coding agents are only as good as the rules they get. This kit gives both agents the same rules, safe permissions and three ready workflows, so every session starts the way your team works.</p>
+
+<div><h2>What you get</h2><div class="grid">
+<div class="card"><b>One rules file for both agents</b><code>AGENTS.md</code> holds how to run, test and finish a task. Codex reads it directly; <code>CLAUDE.md</code> imports it with one line.</div>
+<div class="card"><b>Safe permissions</b>Tests and <code>git diff</code> run without asking. <code>push</code> and <code>commit</code> ask first. Force-push and reading <code>.env</code> are denied.</div>
+<div class="card"><b>A guard for secrets</b>A hook blocks any edit to <code>.env</code>, keys and credential files, and tells the agent to ask a person.</div>
+<div class="card"><b>Three skills</b><code>/pr-review</code> finds bugs before the PR. <code>/release-notes</code> writes notes a client can read. <code>/sop-from-notes</code> turns notes into a process document.</div>
+</div></div>
+
+<div><h2>Set up in 10 minutes</h2><ol>
+<li>Copy <code>AGENTS.md</code>, <code>CLAUDE.md</code> and the <code>.claude/</code> folder to your repo root.</li>
+<li>Fill the 3 placeholders in <code>AGENTS.md</code>: what the project is, how to run it, how to test it.</li>
+<li>Put your own test and lint commands in the <code>allow</code> list of <code>.claude/settings.json</code>.</li>
+<li>Open Claude Code in the repo once and accept "trust this folder".</li>
+<li>Type <code>/pr-review</code>. In Codex, ask "what are the rules for this repo?" to confirm it read <code>AGENTS.md</code>.</li>
+</ol></div>
+
+<div class="tip"><b>The rule that saves the most time:</b> make the agent end every task with "tests pass + 3-line summary + what was skipped". You review a summary, not a wall of code.</div>
+
+<div><h2>Write your own skill</h2>
+<p style="margin:0">A skill is a folder with a <code>SKILL.md</code>: a name, a one-line description of when to use it, and numbered steps. Start from the task your team repeats every week, write the steps the way you would explain them to a new hire, and keep it under 30 lines.</p></div>
+
+<div><h2>What changes for the team</h2><div class="grid">
+<div class="card"><b>Before</b>Each person prompts differently. The agent guesses how to test, edits files nobody asked for, and someone finds a secret in a commit.</div>
+<div class="card"><b>After</b>Same rules in every session, risky commands ask first, secrets are blocked, and repeated work is one command away.</div>
+</div></div>
+
+<div class="foot"><span>Need it set up for your stack, with skills for your workflow and a recorded team walkthrough? Async, no meetings.</span><span>jpgestao.com/en</span></div>
+</div></body></html>
